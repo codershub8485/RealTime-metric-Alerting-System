@@ -55,49 +55,45 @@ A full-stack web application for configuring alert rules, ingesting metric data,
 ### WebSocket
 - `WS /ws` - Real-time alert notifications
 
-## 🛠️ Installation & Setup
+## � Quick Start
 
 ### Prerequisites
 - Node.js 18+ 
 - Python 3.8+
 - npm or yarn
 
-### Quick Start
+### Installation
 
-1. **Clone and install dependencies:**
+1. **Clone the repository:**
 ```bash
-git clone <repository-url>
-cd ARF
-npm run install-all
+git clone https://github.com/codershub8485/RealTime-metric-Alerting-System.git
+cd RealTime-metric-Alerting-System
 ```
 
-2. **Start the development servers:**
+2. **Install dependencies:**
 ```bash
-npm run dev
-```
-
-This will start:
-- Backend API server on `http://localhost:8000`
-- Frontend development server on `http://localhost:5173`
-
-3. **Access the application:**
-Open your browser and navigate to `http://localhost:5173`
-
-### Manual Setup
-
-#### Backend Setup
-```bash
+# Backend dependencies
 cd backend
 pip install -r requirements.txt
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+# Frontend dependencies
+cd ../frontend
+npm install
 ```
 
-#### Frontend Setup
+3. **Start the development servers:**
 ```bash
+# Terminal 1: Start backend
+cd backend
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+# Terminal 2: Start frontend
 cd frontend
-npm install
 npm run dev
 ```
+
+4. **Access the application:**
+Open your browser and navigate to `http://localhost:5173`
 
 ## 📖 Usage Guide
 
@@ -231,10 +227,11 @@ cd frontend && npm test
 
 ### Project Structure
 ```
-ARF/
+RealTime-metric-Alerting-System/
 ├── backend/
 │   ├── main.py              # FastAPI application
 │   ├── requirements.txt     # Python dependencies
+│   ├── .gitignore          # Git ignore file for Python
 │   └── alerts.db           # SQLite database (auto-created)
 ├── frontend/
 │   ├── src/
@@ -242,10 +239,11 @@ ARF/
 │   │   ├── pages/         # Page components
 │   │   ├── App.jsx        # Main app component
 │   │   └── main.jsx       # Entry point
+│   ├── .gitignore         # Git ignore file for Node.js
 │   ├── package.json       # Node.js dependencies
 │   └── vite.config.js     # Vite configuration
-├── package.json           # Root package.json for scripts
-└── README.md             # This file
+├── README.md              # This file
+└── .git/                  # Git repository (auto-initialized)
 ```
 
 ### Environment Variables
@@ -254,13 +252,19 @@ No environment variables required for basic setup. For production:
 - `CORS_ORIGINS`: Allowed frontend origins
 - `LOG_LEVEL`: Logging configuration
 
+## 🌐 Repository
+
+**GitHub Repository:** https://github.com/codershub8485/RealTime-metric-Alerting-System
+
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
 4. Add tests if applicable
-5. Submit a pull request
+5. Commit your changes (`git commit -m 'Add some amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
 
 ## 📄 License
 
